@@ -19,11 +19,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
-	public static final Whacker Whacker = new Whacker();
+	public static Whacker Whacker;
 	public static OI oi;
 
     Command autonomousCommand;
-    Command RunWhacker = new RunWhacker();
+    Command RunWhacker;
     SendableChooser chooser;
 
     /**
@@ -32,6 +32,8 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+		Whacker = new Whacker();
+		RunWhacker = new RunWhacker();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new RunWhacker());
 //        chooser.addObject("My Auto", new MyAutoCommand());
@@ -99,7 +101,8 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        oi.WhackerButton.whenPressed(RunWhacker);
+        
+
     }
     
     /**
