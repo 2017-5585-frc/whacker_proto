@@ -3,15 +3,24 @@ package org.usfirst.frc.team5585.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.usfirst.frc.team5585.robot.commands.*;
+import org.usfirst.frc.team5585.robot.subsystems.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	public Joystick joystick = new Joystick(RobotMap.joystickPort);
-    public Button WhackerButton = new JoystickButton(joystick, 2);
+	public Joystick joystick;
+    public Button WhackerButton;
     
+    
+    public OI() {
+        joystick = new Joystick(RobotMap.joystickPort);
+    	WhackerButton = new JoystickButton(joystick, 2);
+        SmartDashboard.putData("RunWhacker", new RunWhacker());
+    }
 	}
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.

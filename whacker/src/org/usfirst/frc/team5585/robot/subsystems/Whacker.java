@@ -3,6 +3,7 @@ package org.usfirst.frc.team5585.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.DigitalInput;
 import org.usfirst.frc.team5585.robot.RobotMap;
 /**
@@ -12,9 +13,9 @@ public class Whacker extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-	private Jaguar whackerMotor = new Jaguar(RobotMap.whackerPort);
-	public DigitalInput endSW = new DigitalInput(RobotMap.endSWPort),
-			beginSW = new DigitalInput(RobotMap.beginSWPort);
+	private SpeedController whackerMotor = RobotMap.whackerMotor;
+	public DigitalInput endSW = RobotMap.endSW,
+			beginSW = RobotMap.beginSW;
 	private boolean whacked = false;
 	public boolean done = false;
 	
