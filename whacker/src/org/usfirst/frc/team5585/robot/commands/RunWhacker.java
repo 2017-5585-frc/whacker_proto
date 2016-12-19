@@ -4,6 +4,7 @@ package org.usfirst.frc.team5585.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team5585.robot.Robot;
+import org.usfirst.frc.team5585.robot.subsystems.*;
 
 /**
  *
@@ -18,7 +19,6 @@ public class RunWhacker extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.Whacker.init();
     }
 
     // Called repeatedly when this Command is scheduled to run

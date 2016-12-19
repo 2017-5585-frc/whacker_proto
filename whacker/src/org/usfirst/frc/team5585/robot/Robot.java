@@ -22,8 +22,7 @@ public class Robot extends IterativeRobot {
 	public static Whacker Whacker;
 	public static OI oi;
 
-    Command autonomousCommand;
-    Command RunWhacker;
+//    Command autonomousCommand;
     SendableChooser chooser;
 
     /**
@@ -31,14 +30,13 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
 		RobotMap.init();
 		Whacker = new Whacker();
-		RunWhacker = new RunWhacker();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new RunWhacker());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        oi = new OI();
         oi.WhackerButton.whenPressed(new RunWhacker());
     }
 	
@@ -48,7 +46,7 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
-
+//    	boolean disabled = true;
     }
 	
 	public void disabledPeriodic() {
@@ -65,7 +63,7 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
-        autonomousCommand = (Command) chooser.getSelected();
+        //autonomousCommand = (Command) chooser.getSelected();
         
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
@@ -79,7 +77,7 @@ public class Robot extends IterativeRobot {
 		} */
     	
     	// schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
+        //if (autonomousCommand != null) autonomousCommand.start();
     }
 
     /**
@@ -94,8 +92,9 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        if (autonomousCommand != null) autonomousCommand.cancel();
-        Scheduler.getInstance().add(RunWhacker);
+        //if (autonomousCommand != null) {
+        	//autonomousCommand.cancel();
+        //}
         
     }
 
