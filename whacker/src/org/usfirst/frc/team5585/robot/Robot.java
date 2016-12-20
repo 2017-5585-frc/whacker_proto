@@ -33,8 +33,8 @@ public class Robot extends IterativeRobot {
 		RobotMap.init();
 		Whacker = new Whacker();
         chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new RunWhacker());
-//        chooser.addObject("My Auto", new MyAutoCommand());
+        chooser.addDefault("run Whacker", new RunWhacker());
+        chooser.addObject("alt", new RunWhacker());
         SmartDashboard.putData("Auto mode", chooser);
         oi = new OI();
         oi.WhackerButton.whenPressed(new RunWhacker());

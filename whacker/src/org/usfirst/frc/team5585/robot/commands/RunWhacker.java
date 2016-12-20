@@ -33,9 +33,7 @@ public class RunWhacker extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	while (Robot.Whacker.beginSW.get() == false) {
     		Robot.Whacker.reset();
-    	}
     }
 
     // Called when another command which requires one or more of the same

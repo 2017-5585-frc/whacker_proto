@@ -25,33 +25,38 @@ public class Whacker extends Subsystem {
 	public void whack(double speed) {
 		long start = 0;
 		
-		if (beginSW.get() == false && endSW.get() == false) {
+		if (beginSW.get() == true && endSW.get() == true && whacked == false) {
 			whackerMotor.set(0.5);
 			return;
 		}
 		
-		if (endSW.get() == true && whacked == false) {
+		if (endSW.get() == false && whacked == false) {
 			whackerMotor.stopMotor();
 			start = System.currentTimeMillis();
 			whacked = true;
+			System.out.println(System.currentTimeMillis() - start);
 			return;
 		}
 		
-		if (System.currentTimeMillis() - start <= 200) {
+		if (System.currentTimeMillis() - start <= 5000) {
+			System.out.println(System.currentTimeMillis() - start);
 			return;
 		}
-		if (beginSW.get() == true) {
+		if (beginSW.get() == false) {
 			whackerMotor.stopMotor();
 			whacked = false;
 			done = true;
 			return;
 		}
-		whackerMotor.set(-0.5); 
+//		whackerMotor.set(-0.5);
+		whackerMotor.stopMotor();
+		System.out.println("looped");
 	}
 	
 	public void reset() {
 			whackerMotor.stopMotor();
 			whacked = false;
+			done = false;
 	}
 		
 

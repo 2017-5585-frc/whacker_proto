@@ -3,6 +3,7 @@ package org.usfirst.frc.team5585.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team5585.robot.commands.*;
 
@@ -20,7 +21,7 @@ public class OI {
     	WhackerButton = new JoystickButton(joystick, 2);
         SmartDashboard.putData("RunWhacker", new RunWhacker());
     }
-	}
+}
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
