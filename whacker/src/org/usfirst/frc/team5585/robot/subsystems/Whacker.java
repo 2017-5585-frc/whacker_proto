@@ -2,7 +2,6 @@
 package org.usfirst.frc.team5585.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.DigitalInput;
 import org.usfirst.frc.team5585.robot.RobotMap;
@@ -50,7 +49,6 @@ public class Whacker extends Subsystem {
 		}
 //		whackerMotor.set(-0.5);
 		whackerMotor.stopMotor();
-		System.out.println("looped");
 	}
 	
 	public void reset() {
